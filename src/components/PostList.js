@@ -14,7 +14,7 @@ class PostList extends React.Component {
       return (
         <div
           className="ui card"
-          key={post.title}
+          key={post.id}
           onClick={() => this.props.selectPost(post)}
         >
           <div className="image">
