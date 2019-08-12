@@ -11,13 +11,9 @@ export const selectPost = (post) => {
 };
 
 export const fetchPosts = () => {
-  return function(dispatch, getState){
-    const promise = db.collection("posts").get()
-    debugger
-    return {
-      type: 'FETCH_POSTS',
-      payload: promise
-    };
+  return async dispatch => {
+    const response = await db.collection("posts").get();
+    dispatch({ type: 'FETCH_POSTS', payload: response });
   }
 
 };
