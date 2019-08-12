@@ -13,8 +13,5 @@ const firebaseApp = firebase.initializeApp({
 
 const db = firebaseApp.firestore();
 
-db.collection("posts").get().then((snapshop) => {
- console.log(snapshop);
- 
-});
+
 export default db;

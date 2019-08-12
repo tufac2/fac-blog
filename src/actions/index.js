@@ -1,5 +1,4 @@
 import * as firebase from 'firebase/app';
-import 'firebase/firestore';
 import db from '../apis/firebase';
 
 import { async } from 'q';
@@ -12,7 +11,13 @@ export const selectPost = (post) => {
 };
 
 export const fetchPosts = () => {
-  return {
-    type: 'FETCH_POSTS'
-  };
+  return function(dispatch, getState){
+    const promise = db.collection("posts").get()
+    debugger
+    return {
+      type: 'FETCH_POSTS',
+      payload: promise
+    };
+  }
+
 };
