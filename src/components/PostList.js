@@ -11,6 +11,7 @@ class PostList extends React.Component {
   renderList(){
     debugger
     return this.props.posts.map((post) => {
+      let data = post.data()
       return (
         <div
           className="ui card"
@@ -22,13 +23,13 @@ class PostList extends React.Component {
           </div>
           <div className="content">
             <a className="header">
-              {post.title}
+              {data.title}
             </a>
             <div className="meta">
               <span className="date">Joined in 2013</span>
             </div>
             <div className="description">
-              {post.description}
+              {data.description}
             </div>
           </div>
           <div className="extra content">
