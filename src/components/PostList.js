@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { selectPost, fetchPosts } from '../actions'
+import { log } from 'util';
 
 class PostList extends React.Component {
   componentDidMount(){
     this.props.fetchPosts();
   }
   renderList(){
+    debugger
     return this.props.posts.map((post) => {
       return (
         <div
@@ -40,6 +42,7 @@ class PostList extends React.Component {
     });
   }
   render(){
+    console.log(this.props.posts);
     return(
       <div>
         {this.renderList()}
