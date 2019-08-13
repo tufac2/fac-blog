@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a blog project boostrapped with [Create React App](https://github.com/facebook/create-react-app). It is free to use, with the time I will update the code and tutorials to create your own blog.
+
+You can reach me out by linkedin in case you need more info about how to install, use, update your blog.
+
+## Technology Stack
+1. React + Redux + Thunk for the frontend
+2. Firebase's Clouod Firestore as Data Base
 
 ## Available Scripts
 
