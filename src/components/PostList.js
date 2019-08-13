@@ -34,7 +34,7 @@ class PostList extends React.Component {
           <div className="extra content">
             <a>
               <i className="user icon"></i>
-              22 Friends
+              {data.userId}
             </a>
           </div>
         </div>

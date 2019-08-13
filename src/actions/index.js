@@ -12,7 +12,8 @@ export const selectPost = (post) => {
 
 export const fetchPosts = () => {
   return async dispatch => {
-    const response = await db.collection("posts").get();
+    const response = await db.collection("posts")
+      .where('userId', '==', 'ntq9HSlD9voYa9ZeodPt').get();
     dispatch({ type: 'FETCH_POSTS', payload: response.docs });
   }
 
