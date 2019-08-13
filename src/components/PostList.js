@@ -9,9 +9,8 @@ class PostList extends React.Component {
     this.props.fetchPosts();
   }
   renderList(){
-    debugger
     return this.props.posts.map((post) => {
-      let data = post.data()
+      const data = post.data()
       return (
         <div
           className="ui card"
