@@ -21,8 +21,14 @@ export const fetchPosts = () => {
 
 export const fetchUser = (id) => {
   return async dispatch => {
-    const response = await db.collection("users")
-      .get();
-    dispatch({ type: 'FETCH_USER', payload: response.docs });
+    db.collection("users")
+      .get().then(doc => {
+        if (!doc){
+          console.log('No such document exist')
+        }
+        else{
+          dispatch({ type: 'FETCH_USER', payload: doc });
+        }
+      });
   }
 }
