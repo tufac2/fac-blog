@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectPost, fetchPosts } from '../actions'
+import { selectPost, fetchPosts, fetchUser } from '../actions'
 import { log } from 'util';
 
 class PostList extends React.Component {
   componentDidMount(){
     this.props.fetchPosts();
+    this.props.fetchUser(this.props.userId);
   }
   renderList(){
     return this.props.posts.map((post) => {
@@ -54,10 +55,13 @@ class PostList extends React.Component {
 
 // Take the State, make the logic and set in this component's props
 const mapStateToProps = (state) => {
-  return { posts: state.posts } ;
+  return {
+    posts: state.posts,
+    users: state.users
+  } ;
   
 }
 
 export default connect(mapStateToProps, {
-  selectPost, fetchPosts
+  selectPost, fetchPosts, fetchUser
 })(PostList);
