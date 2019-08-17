@@ -58,6 +58,8 @@ class PostList extends React.Component {
 
 // Take the State, make the logic and set in this component's props
 const mapStateToProps = (state, ownProps) => {
+  console.log(state.users);
+  
   return {
     posts: state.posts,
     users: state.users
