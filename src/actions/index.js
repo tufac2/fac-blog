@@ -27,7 +27,6 @@ export const fetchPosts = () => {
     const response = await db.collection("posts").get();
     dispatch({ type: 'FETCH_POSTS', payload: response.docs });
   }
-
 };
 
 export const fetchUser = (id) => {
