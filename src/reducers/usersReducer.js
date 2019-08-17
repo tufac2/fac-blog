@@ -1,7 +1,7 @@
-export default (state = [], action) => {
+export const userReducer = (state = [], action) => {
     switch (action.type) {
         case 'FETCH_USER':
-            return action.payload;
+            return [...state, action.payload];
             break;
         default:
             return state;
