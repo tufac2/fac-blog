@@ -9,7 +9,6 @@ class PostList extends React.Component {
   componentDidMount(){
     this.props.fetchPostsAndUsers();
     // this.props.fetchUser();
-    console.log(this.state)
   }
   
   getUser(id) {
@@ -66,5 +65,5 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(mapStateToProps, {
-  selectPost, fetchPostsAndUsers, fetchUser
+  selectPost, fetchPostsAndUsers
 })(PostList);
