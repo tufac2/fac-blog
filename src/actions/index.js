@@ -10,10 +10,21 @@ export const selectPost = (post) => {
   };
 };
 
+export const fetchPostsAndUsers = () => {
+  return async (dispatch, getState) => {
+    await dispatch(fetchPosts())
+    const userIds = (getState().posts).map(post => {
+      return post.data().userId
+    });
+    userIds.forEach(id => dispatch(fetchUser(id)));
+    // console.log(users);
+    
+  }
+}
+
 export const fetchPosts = () => {
-  return async dispatch => {
-    const response = await db.collection("posts")
-      .where('userId', '==', 'ntq9HSlD9voYa9ZeodPt').get();
+  return async (dispatch, getState) => {
+    const response = await db.collection("posts").get();
     dispatch({ type: 'FETCH_POSTS', payload: response.docs });
   }
 
@@ -21,14 +32,8 @@ export const fetchPosts = () => {
 
 export const fetchUser = (id) => {
   return async dispatch => {
-    db.collection("users")
-      .get().then(doc => {
-        if (!doc){
-          console.log('No such document exist')
-        }
-        else{
-          dispatch({ type: 'FETCH_USER', payload: doc });
-        }
-      });
+    const response = await db.collection("users")
+      .where('userId', '==', `id`).get()
+    dispatch({ type: 'FETCH_USER', payload: response.docs});
   }
 }
