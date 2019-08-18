@@ -32,7 +32,7 @@ export const fetchPosts = () => {
 export const fetchUser = (id) => {
   return async dispatch => {
     const response = await db.collection("users")
-      .get()
+      .where('userId', '==', `id`).get()
     dispatch({ type: 'FETCH_USER', payload: response.docs});
   }
 }
