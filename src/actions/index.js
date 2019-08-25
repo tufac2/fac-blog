@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import db from '../apis/firebase';
+import axios from 'axios';
 
 import { async } from 'q';
 
@@ -10,22 +11,10 @@ export const selectPost = (post) => {
   };
 };
 
-export const fetchPostsAndUsers = () => {
-  return async (dispatch, getState) => {
-    await dispatch(fetchPosts())
-    const userIds = (getState().posts).map(post => {
-      return post.data().userId
-    });
-    userIds.forEach(id => dispatch(fetchUser(id)));
-    // console.log(users);
-    
-  }
-}
-
 export const fetchPosts = () => {
   return async (dispatch, getState) => {
-    const response = await db.collection("posts").get();
-    dispatch({ type: 'FETCH_POSTS', payload: response.docs });
+    const response = await axios.get("https://us-central1-fac-blog.cloudfunctions.net/getPosts")    
+    dispatch({ type: 'FETCH_POSTS', payload: response.data });
   }
 };
 

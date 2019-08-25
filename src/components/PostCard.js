@@ -26,6 +26,7 @@ const PostCard = ({ post }) => {
     <div className="extra content">
       <a>
         <i className="user icon"></i>
+        <span>{post.username}</span>
       </a>
     </div>
   </div>   

@@ -1,25 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectPost, fetchPosts, fetchUser, fetchPostsAndUsers } from '../actions'
+import { selectPost, fetchPosts, fetchUser } from '../actions'
 import PostCard from './PostCard';
 import { log } from 'util';
 
 class PostList extends React.Component {
   
   componentDidMount(){
-    this.props.fetchPostsAndUsers();
-    // this.props.fetchUser();
+    this.props.fetchPosts();
   }
   
   getUser(id) {
     return this.props.userId === id
   }
   renderList(){
-    return this.props.posts.map((post) => {
-      const data = post.data()
+    return this.props.posts.map((data) => {
+      // const data = post.data()
       return (
-        <div key={post.id}>
+        <div key={data.title}>
           <PostCard post={ data } />
         </div>
       );
@@ -48,5 +47,5 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(mapStateToProps, {
-  selectPost, fetchPostsAndUsers
+  selectPost, fetchPosts
 })(PostList);
