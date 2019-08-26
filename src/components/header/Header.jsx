@@ -1,10 +1,18 @@
 import React from 'react'
 
 const Header = () => (
-  <div className="ui three item menu">
-    <a className="item">Editorials</a>
-    <a className="item">Reviews</a>
-    <a className="item active">Upcoming Events</a>
+  <div id="site_header" className="ui three item menu header">
+    <div className="my-photo">
+      <img src="images/my_photo.jpg" alt="image" />
+      <div className="mask"></div>
+    </div>
+    <div className="site-title-block">
+      <h1 className="site-title">Fabián Almenara</h1>
+      <p className="site-description">Organizational change for a better project management</p>
+    </div>
+    <a className="menu-toggle mobile-visible">
+      <i className="fa fa-bars"></i>
+    </a>
   </div>
 )
 
