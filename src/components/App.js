@@ -7,7 +7,7 @@ import SideHeader from './SideHeader/SideHeader.jsx';
 const App = () => {
   return(
     <div className="ui container grid">
-      <Header />
+      <SideHeader />
       <div className="ui row">
         <div className="column eight wide">
           <PostList />
