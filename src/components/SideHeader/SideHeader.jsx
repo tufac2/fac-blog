@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Header = () => (
-  <div id="site_header" className="ui three item menu header">
+const SideHeader = () => (
+  <div id="site_header" className="ui three item menu sideHeader">
     <div className="my-photo">
       <img src="images/my_photo.jpg" alt="image" />
       <div className="mask"></div>
@@ -17,4 +17,4 @@ const Header = () => (
   </div>
 )
 
-export default Header;
+export default SideHeader;
