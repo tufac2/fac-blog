@@ -6,10 +6,10 @@ import SideHeader from './SideHeader/SideHeader.jsx';
 
 const App = () => {
   return(
-    <div className="ui container grid">
+    <div className="pusher">
       <SideHeader />
-      <div className="ui row">
-        <div className="column eight wide">
+      <div className="ui vertical stripe quote segment">
+        <div className="ui equal width stackable internally celled grid">
           <PostList />
         </div>
         <div className="column eight wide">

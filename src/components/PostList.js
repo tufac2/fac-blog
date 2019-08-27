@@ -18,7 +18,7 @@ class PostList extends React.Component {
     return this.props.posts.map((data) => {
       // const data = post.data()
       return (
-        <div key={data.title}>
+        <div className="column" key={data.title}>
           <PostCard post={ data } />
         </div>
       );
@@ -26,7 +26,7 @@ class PostList extends React.Component {
   }
   render(){
     return(
-      <div>
+      <div className="center aligned row">
         {this.renderList()}
       </div>
     )
