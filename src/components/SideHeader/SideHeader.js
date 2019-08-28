@@ -24,7 +24,7 @@ class SideHeader extends React.Component {
     this.props.setSideHeader();
   }
   render() {
-    const { visible } = this.state
+    const { visible } = this.props.visible
 
     return (
       <div>
