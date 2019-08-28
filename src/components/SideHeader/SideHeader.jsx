@@ -48,11 +48,7 @@ export default class SideHeader extends React.Component {
             </Menu.Item>
             <Menu.Item as='a'>
               <Icon name='gamepad' />
-              Games
-            </Menu.Item>
-            <Menu.Item as='a'>
-              <Icon name='camera' />
-              Channels
+              Blog
             </Menu.Item>
           </Sidebar>
 
