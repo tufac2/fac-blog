@@ -25,3 +25,9 @@ export const fetchUser = (id) => {
     dispatch({ type: 'FETCH_USER', payload: response.docs});
   }
 }
+
+export const setSideHeader = () => {
+  return dispatch => {
+    dispatch({ type: 'SET_SIDE_HEADER', payload: true})
+  }
+}
