@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 import {
   Button,
@@ -10,7 +11,7 @@ import {
   Sidebar,
 } from 'semantic-ui-react'
 
-export default class SideHeader extends React.Component {
+class SideHeader extends React.Component {
   state = { visible: false }
 
   handleHideClick = () => this.setState({ visible: false })
@@ -63,3 +64,9 @@ export default class SideHeader extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return { visible: state.visible }
+}
+
+export default connect(mapStateToProps)(SideHeader)
