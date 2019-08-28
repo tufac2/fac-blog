@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import PostList from './PostList';
 import PostDetail from './PostDetail';
-import SideHeader from './SideHeader/SideHeader.jsx';
+import SideHeader from './SideHeader/SideHeader.js';
 
 const App = () => {
   return(

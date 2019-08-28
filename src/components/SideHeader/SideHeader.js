@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
+import { setSideHeader } from '../../actions'
+
 import {
   Button,
   Header,
@@ -17,6 +19,7 @@ class SideHeader extends React.Component {
   handleHideClick = () => this.setState({ visible: false })
   handleShowClick = () => this.setState({ visible: true })
   handleSidebarHide = () => this.setState({ visible: false })
+
 
   render() {
     const { visible } = this.state
@@ -40,7 +43,7 @@ class SideHeader extends React.Component {
             inverted
             onHide={this.handleSidebarHide}
             vertical
-            visible={visible}
+            visible={this.props.visible}
             width='thin'
           >
             <Menu.Item as='a'>
