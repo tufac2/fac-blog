@@ -71,7 +71,7 @@ class SideHeader extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { visible: state.visible }
+  return { visible: state.sideHeaderStatus }
 }
 
 export default connect(mapStateToProps, {
