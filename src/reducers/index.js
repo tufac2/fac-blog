@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 
 import postsReducer from './postsReducer';
 import usersReducer from './usersReducer';
+import sideHeaderReducer from './sideHeaderReducer';
 
 const selectedPostReducer = (selectedPost = null, action) => {
   if (action.type === 'POST_SELECTED') {
@@ -13,5 +14,6 @@ const selectedPostReducer = (selectedPost = null, action) => {
 export default combineReducers({
   posts: postsReducer,
   selectedPost: selectedPostReducer,
-  users: usersReducer
+  users: usersReducer,
+  sideHeaderStatus: sideHeaderReducer
 });

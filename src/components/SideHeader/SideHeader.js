@@ -20,7 +20,9 @@ class SideHeader extends React.Component {
   handleShowClick = () => this.setState({ visible: true })
   handleSidebarHide = () => this.setState({ visible: false })
 
-
+  componentDidMount(){
+    this.props.setSideHeader();
+  }
   render() {
     const { visible } = this.state
 
@@ -72,4 +74,6 @@ const mapStateToProps = (state) => {
   return { visible: state.visible }
 }
 
-export default connect(mapStateToProps)(SideHeader)
+export default connect(mapStateToProps, {
+  setSideHeader
+})(SideHeader)
