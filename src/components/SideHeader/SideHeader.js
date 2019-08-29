@@ -16,12 +16,12 @@ import {
 class SideHeader extends React.Component {
   state = { visible: false }
 
-  handleHideClick = () => this.setState({ visible: false })
-  handleShowClick = () => this.setState({ visible: true })
-  handleSidebarHide = () => this.setState({ visible: false })
+  handleHideClick = () => this.props.setSideHeader(false);
+  handleShowClick = () => this.props.setSideHeader(true);
+  handleSidebarHide = () => this.props.setSideHeader(false);
 
   componentDidMount(){
-    this.props.setSideHeader();
+    this.props.setSideHeader(true);
   }
   render() {
     const { visible } = this.props.visible
