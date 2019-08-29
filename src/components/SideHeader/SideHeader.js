@@ -21,10 +21,9 @@ class SideHeader extends React.Component {
   handleSidebarHide = () => this.props.setSideHeader(false);
 
   componentDidMount(){
-    this.props.setSideHeader(true);
+    this.props.setSideHeader(false);
   }
   render() {
-    debugger
     const visible = this.props.visible
 
     return (
@@ -41,7 +40,7 @@ class SideHeader extends React.Component {
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
-            animation='overlay'
+            animation='push'
             icon='labeled'
             inverted
             onHide={this.handleSidebarHide}
@@ -58,7 +57,6 @@ class SideHeader extends React.Component {
               Blog
             </Menu.Item>
           </Sidebar>
-
           <Sidebar.Pusher>
             <Segment basic>
               <Header as='h3'>Application Content</Header>
