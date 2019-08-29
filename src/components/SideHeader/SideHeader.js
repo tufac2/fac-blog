@@ -21,7 +21,7 @@ class SideHeader extends React.Component {
   handleSidebarHide = () => this.setState({ visible: false })
 
   componentDidMount(){
-    this.props.setSideHeader();
+    this.props.setSideHeader(true);
   }
   render() {
     const { visible } = this.state
