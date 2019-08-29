@@ -16,7 +16,7 @@ export const fetchPosts = () => {
     const response = await axios.get("https://us-central1-fac-blog.cloudfunctions.net/getPosts")    
     dispatch({ type: 'FETCH_POSTS', payload: response.data });
   }
-};
+}
 
 export const fetchUser = (id) => {
   return async dispatch => {
@@ -26,8 +26,8 @@ export const fetchUser = (id) => {
   }
 }
 
-export const setSideHeader = () => {
+export const setSideHeader = (status) => {
   return dispatch => {
-    dispatch({ type: 'SET_SIDE_HEADER', payload: true})
+    dispatch({ type: 'SET_SIDE_HEADER', payload: status})
   }
 }
