@@ -24,7 +24,8 @@ class SideHeader extends React.Component {
     this.props.setSideHeader(true);
   }
   render() {
-    const { visible } = this.props.visible
+    debugger
+    const visible = this.props.visible
 
     return (
       <div>
@@ -45,7 +46,7 @@ class SideHeader extends React.Component {
             inverted
             onHide={this.handleSidebarHide}
             vertical
-            visible={this.props.visible}
+            visible={visible}
             width='thin'
           >
             <Menu.Item as='a'>
