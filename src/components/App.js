@@ -9,19 +9,20 @@ import { Sidebar, Segment } from 'semantic-ui-react';
 const App = () => {
   return(
     <div>
-      <SideHeader />
-      <Sidebar.Pusher>
-        <Segment basic>
-          <div className="ui vertical stripe quote segment">
-            <div className="ui equal width stackable internally celled grid">
-              <PostList />
+      <SideHeader>
+        <Sidebar.Pusher>
+          <Segment basic>
+            <div className="ui vertical stripe quote segment">
+              <div className="ui equal width stackable internally celled grid">
+                <PostList />
+              </div>
+              <div className="column eight wide">
+                <PostDetail />
+              </div>
             </div>
-            <div className="column eight wide">
-              <PostDetail />
-            </div>
-          </div>
-        </Segment>
-      </Sidebar.Pusher>
+          </Segment>
+        </Sidebar.Pusher>
+      </SideHeader>
     </div>
   );
 };

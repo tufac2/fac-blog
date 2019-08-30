@@ -25,6 +25,7 @@ class SideHeader extends React.Component {
   }
   render() {
     const visible = this.props.visible
+    const children = this.props.children
 
     return (
       <div>
@@ -59,8 +60,7 @@ class SideHeader extends React.Component {
           </Sidebar>
           <Sidebar.Pusher>
             <Segment basic>
-              <Header as='h3'>Application Content</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              { children }
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
