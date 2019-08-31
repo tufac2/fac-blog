@@ -6,7 +6,7 @@ import { Pagination } from 'semantic-ui-react'
 const PageCounter = (props) => (
   <Pagination
     boundaryRange={0}
-    defaultActivePage={props.currentPage}
+    defaultActivePage={props.config.defaultActivePage}
     ellipsisItem={null}
     firstItem={null}
     lastItem={null}
@@ -17,7 +17,7 @@ const PageCounter = (props) => (
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentPage: state.pageCounter.currentPage
+    config: state.pageCounter
   }
 }
 
