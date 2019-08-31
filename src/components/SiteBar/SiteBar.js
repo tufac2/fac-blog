@@ -30,7 +30,7 @@ class SideHeader extends React.Component {
     const children = this.props.children
 
     return (
-      <div class="sidebar-wrapper">
+      <div className="sidebar-wrapper">
         <Button.Group>
           <Button disabled={visible} onClick={this.handleShowClick}>
             Show sidebar
@@ -52,6 +52,10 @@ class SideHeader extends React.Component {
             width='thin'
             className="site-nav"
           >
+            <div className="my-photo">
+              <img src="../../assets/img/my_photo.png" alt="image" />
+              <div className="mask"></div>
+            </div>
             <Menu.Item as='a'>
               <Icon name='edit' />
               Blog
