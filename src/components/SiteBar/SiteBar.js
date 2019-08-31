@@ -21,14 +21,14 @@ class SideHeader extends React.Component {
   handleHideClick = () => this.props.setSideHeader(false);
   handleShowClick = () => this.props.setSideHeader(true);
   handleSidebarHide = () => this.props.setSideHeader(false);
-
+  
   componentDidMount(){
     this.props.setSideHeader(false);
   }
   render() {
     const visible = this.props.visible
     const children = this.props.children
-
+    const image = require('../../assets/img/my_photo.png')
     return (
       <div className="sidebar-wrapper">
         <Button.Group>
@@ -53,7 +53,7 @@ class SideHeader extends React.Component {
             className="site-nav"
           >
             <div className="my-photo">
-              <img src="../../assets/img/my_photo.png" alt="image" />
+              <img src={image} alt="image" />
               <div className="mask"></div>
             </div>
             <Menu.Item as='a'>

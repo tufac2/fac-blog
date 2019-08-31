@@ -5,3 +5,11 @@
 .sidebar-wrapper{
   height: 100%;
 }
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
