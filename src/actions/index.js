@@ -13,7 +13,7 @@ export const selectPost = (post) => {
 
 export const fetchPosts = () => {
   return async (dispatch, getState) => {
-    const response = await axios.get("https://us-central1-fac-blog.cloudfunctions.net/getPosts")    
+    const response = await axios.get("https://us-central1-fac-blog.cloudfunctions.net/getPosts?limit=1")    
     dispatch({ type: 'FETCH_POSTS', payload: response.data });
   }
 }
