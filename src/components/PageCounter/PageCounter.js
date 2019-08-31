@@ -1,10 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux';
+
 import { Pagination } from 'semantic-ui-react'
 
-const PageCounter = () => (
+const PageCounter = (props) => (
   <Pagination
     boundaryRange={0}
-    defaultActivePage={1}
+    defaultActivePage={props.currentPage}
     ellipsisItem={null}
     firstItem={null}
     lastItem={null}
@@ -13,4 +15,10 @@ const PageCounter = () => (
   />
 )
 
-export default PageCounter
+const mapStateToProps = (state, ownProps) => {
+  return {
+    currentPage: 2
+  }
+}
+
+export default connect(mapStateToProps)(PageCounter);
