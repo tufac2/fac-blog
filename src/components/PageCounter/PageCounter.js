@@ -8,10 +8,10 @@ const PageCounter = (props) => (
     boundaryRange={0}
     defaultActivePage={props.config.defaultActivePage}
     ellipsisItem={null}
-    firstItem={null}
-    lastItem={null}
+    firstItem={props.config.firstItem}
+    lastItem={props.config.lastItem}
     siblingRange={1}
-    totalPages={10}
+    totalPages={props.config.totalPages}
   />
 )
 
