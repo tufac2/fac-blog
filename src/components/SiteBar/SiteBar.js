@@ -53,12 +53,12 @@ class SideHeader extends React.Component {
             className="site-nav"
           >
             <Menu.Item as='a'>
-              <Icon name='home' />
-              Home
+              <Icon name='edit' />
+              Blog
             </Menu.Item>
             <Menu.Item as='a'>
-              <Icon name='gamepad' />
-              Blog
+              <Icon name='coffee' />
+              Contact
             </Menu.Item>
           </Sidebar>
           <Sidebar.Pusher>
