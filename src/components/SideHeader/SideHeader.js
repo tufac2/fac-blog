@@ -28,7 +28,7 @@ class SideHeader extends React.Component {
     const children = this.props.children
 
     return (
-      <div>
+      <div class="sidebar-wrapper">
         <Button.Group>
           <Button disabled={visible} onClick={this.handleShowClick}>
             Show sidebar

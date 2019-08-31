@@ -6,18 +6,18 @@ import Pagination from './PageCounter/PageCounter';
 import { Sidebar, Segment } from 'semantic-ui-react';
 import PageCounter from './PageCounter/PageCounter';
 
+import '../styles/app.scss'
+
 const App = () => {
   return(
-    <div>
-      <SideHeader>
-        <div className="ui vertical stripe quote segment">
-          <div className="ui equal width stackable internally celled grid">
-            <PostList />
-          </div>
-          <PageCounter />
+    <SideHeader>
+      <div className="ui vertical stripe quote segment">
+        <div className="ui equal width stackable internally celled grid">
+          <PostList />
         </div>
-      </SideHeader>
-    </div>
+        <PageCounter />
+      </div>
+    </SideHeader>
   );
 };
 
