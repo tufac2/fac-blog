@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { setSideHeader } from '../../actions'
 
+import './siteBar.scss'
+
 import {
   Button,
   Header,
@@ -48,6 +50,7 @@ class SideHeader extends React.Component {
             vertical
             visible={visible}
             width='thin'
+            className="site-nav"
           >
             <Menu.Item as='a'>
               <Icon name='home' />
