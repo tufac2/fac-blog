@@ -17,7 +17,7 @@ const PageCounter = (props) => (
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentPage: 2
+    currentPage: state.pageCounter.currentPage
   }
 }
 

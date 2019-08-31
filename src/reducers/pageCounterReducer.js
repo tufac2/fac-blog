@@ -1,6 +1,6 @@
 export default (state = {
   visitedPages: [1],
-  currentPage: 1
+  currentPage: 3
 }, action) => {
   switch (action.type) {
       case 'SET_CURRENT_PAGE':
