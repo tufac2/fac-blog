@@ -32,7 +32,8 @@ export const setSideHeader = (status) => {
   }
 }
 
-export const changePage = (page) => {
+export const setNewPage = (page) => {
+  debugger
   return dispatch => {
     dispatch({ type: 'SET_CURRENT_PAGE', payload: page })
   }

@@ -3,10 +3,7 @@ export default (state = {
   defaultActivePage: 1,
   firstItem: {},
   lastItem: {},
-  totalPages: 10,
-  onPageChange: (event, {}) => {
-    debugger
-  }
+  totalPages: 10
 }, action) => {
   switch (action.type) {
       case 'SET_CURRENT_PAGE':
