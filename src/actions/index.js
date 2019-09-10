@@ -31,3 +31,9 @@ export const setSideHeader = (status) => {
     dispatch({ type: 'SET_SIDE_HEADER', payload: status})
   }
 }
+
+export const changePage = (page) => {
+  return dispatch => {
+    dispatch({ type: 'SET_CURRENT_PAGE', payload: page })
+  }
+}
