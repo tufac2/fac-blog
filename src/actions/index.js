@@ -11,9 +11,9 @@ export const selectPost = (post) => {
   };
 };
 
-export const fetchPosts = () => {
+export const fetchPosts = (limit=1) => {
   return async (dispatch, getState) => {
-    const response = await axios.get("https://us-central1-fac-blog.cloudfunctions.net/getPosts?limit=1")    
+    const response = await axios.get(`https://us-central1-fac-blog.cloudfunctions.net/getPosts?limit=${limit}`)    
     dispatch({ type: 'FETCH_POSTS', payload: response.data });
   }
 }
@@ -29,12 +29,5 @@ export const fetchUser = (id) => {
 export const setSideHeader = (status) => {
   return dispatch => {
     dispatch({ type: 'SET_SIDE_HEADER', payload: status})
-  }
-}
-
-export const setNewPage = (event, data) => {
-  debugger
-  return dispatch => {
-    dispatch({ type: 'SET_CURRENT_PAGE', payload: data })
   }
 }
