@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { setSideHeader } from '../../actions'
 
-import contactPage from '../../pages'
-
 import './siteBar.scss'
 
 import {

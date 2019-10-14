@@ -7,7 +7,7 @@ import { Sidebar, Segment } from 'semantic-ui-react';
 import PageCounter from './PageCounter/PageCounter';
 
 // pages
-import contacPage from '../pages'
+import contacPage from '../pages/contact'
 
 import '../styles/app.scss'
 
