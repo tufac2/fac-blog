@@ -60,18 +60,18 @@ class SideHeader extends React.Component {
                 <img src={image} alt="image" />
                 <div className="mask"></div>
               </div>
-              <Menu.Item as='div'>
-                <Icon name='edit' />
-                <Link to="/">
+              <Link to="/">
+                <Menu.Item as='div'>
+                  <Icon name='edit' />
                   Inicio
-                </Link>
-              </Menu.Item>
-              <Menu.Item as='div'>
-                <Icon name='coffee' />
-                <Link to="/contact">
+                </Menu.Item>  
+              </Link>
+              <Link to="/contact">
+                <Menu.Item as='div'>
+                  <Icon name='coffee' />
                   Contact
-                </Link>
-              </Menu.Item>
+                </Menu.Item>
+              </Link>
             </Sidebar>
             <Sidebar.Pusher>
               <Segment basic>
