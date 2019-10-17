@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { Pagination } from 'semantic-ui-react'
 
-import { fetchPosts } from '../../actions'
+import { fetchPosts, setNewPage } from '../../actions'
 class PageCounter extends React.Component {
   render(){
     return(
@@ -15,7 +15,7 @@ class PageCounter extends React.Component {
         lastItem={this.props.config.lastItem}
         siblingRange={1}
         totalPages={this.props.config.totalPages}
-        onPageChange={(event, data) => this.props.fetchPosts(data.activePage)}
+        onPageChange={(event, data) => this.props.setNewPage(data.activePage)}
       />
     )
   }
@@ -29,5 +29,5 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(mapStateToProps, {
-  fetchPosts
+  fetchPosts, setNewPage
 })(PageCounter);

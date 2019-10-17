@@ -31,3 +31,9 @@ export const setSideHeader = (status) => {
     dispatch({ type: 'SET_SIDE_HEADER', payload: status})
   }
 }
+
+export const setNewPage = (activePage) => {
+  debugger
+  fetchPosts()
+  return({ type: 'SET_NEW_PAGE', payload: activePage})
+}
