@@ -15,7 +15,7 @@ class PageCounter extends React.Component {
         lastItem={this.props.config.lastItem}
         siblingRange={1}
         totalPages={this.props.config.totalPages}
-        onPageChange={(event, data) => this.props.fetchPosts(data.activePage)}
+        onPageChange={(event, data) => this.props.fetchPosts(data.limit, data.activePage)}
       />
     )
   }

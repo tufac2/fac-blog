@@ -10,24 +10,17 @@ class PostList extends React.Component {
   componentDidMount(){
     this.props.fetchPosts();
   }
-  getPostIndex(){
-    const first = (this.props.pagination.activePage * this.props.pagination.limit) - this.props.pagination.limit
-    const last = first + (this.props.pagination.limit -1)
-    return {
-      firstPostIndex: first, lastPostIndex: last
-    }
-  }
+
   getUser(id) {
     return this.props.userId === id
   }
   renderList(){
-    console.log(this.getPostIndex().firstPostIndex);
-    console.log(this.getPostIndex().lastPostIndex);
+    console.log(this.props.pagination.firstIndex);
+    console.log(this.props.pagination.lastIndex);
     console.log(this.props.posts);
     
     return this.props.posts.map((data, index) => {
-      debugger
-      if(index >= this.getPostIndex().firstPostIndex && index <= this.getPostIndex().lastPostIndex){
+      if(index >= this.props.pagination.firstIndex && index <= this.props.pagination.lastIndex){
         return (
           <div className="column" key={data.title}>
             <PostCard post={ data } />
