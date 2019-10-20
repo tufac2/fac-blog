@@ -12,7 +12,7 @@ class PostList extends React.Component {
   }
   getPostIndex(){
     const first = (this.props.pagination.activePage * this.props.pagination.limit) - this.props.pagination.limit
-    const last = first + this.props.pagination.limit
+    const last = first + (this.props.pagination.limit -1)
     return {
       firstPostIndex: first, lastPostIndex: last
     }
@@ -23,16 +23,18 @@ class PostList extends React.Component {
   renderList(){
     console.log(this.getPostIndex().firstPostIndex);
     console.log(this.getPostIndex().lastPostIndex);
-    console.log(this.props.pagination);
+    console.log(this.props.posts);
     
     return this.props.posts.map((data, index) => {
-      if(index >= this.getPostIndex().firstPostIndex && index < this.getPostIndex().lastPostIndex){
+      debugger
+      if(index >= this.getPostIndex().firstPostIndex && index <= this.getPostIndex().lastPostIndex){
         return (
           <div className="column" key={data.title}>
             <PostCard post={ data } />
           </div>
         );
       }
+    else return true;
     });
   }
   render(){

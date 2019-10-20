@@ -11,10 +11,11 @@ export const selectPost = (post) => {
   };
 };
 
-export const fetchPosts = (limit=1) => {
+export const fetchPosts = (activePage=1) => {
   return async (dispatch, getState) => {
-    const response = await axios.get(`https://us-central1-fac-blog.cloudfunctions.net/getPosts?limit=${limit}`)    
+    const response = await axios.get(`https://us-central1-fac-blog.cloudfunctions.net/getPosts?limit=${activePage}`)    
     dispatch({ type: 'FETCH_POSTS', payload: response.data });
+    dispatch({ type: 'SET_NEW_PAGE', payload: activePage});
   }
 }
 
@@ -30,10 +31,4 @@ export const setSideHeader = (status) => {
   return dispatch => {
     dispatch({ type: 'SET_SIDE_HEADER', payload: status})
   }
-}
-
-export const setNewPage = (activePage) => {
-  debugger
-  fetchPosts()
-  return({ type: 'SET_NEW_PAGE', payload: activePage})
 }
